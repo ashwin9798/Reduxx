@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 export default class BookList extends Component {
   renderList() {
@@ -16,3 +17,12 @@ export default class BookList extends Component {
     )
   }
 }
+
+function mapStateToProps(state) {
+  //pass props to BookList component
+  return {
+    books: state.books
+  }
+}
+
+export default connect(mapStateToProps)(BookList);
